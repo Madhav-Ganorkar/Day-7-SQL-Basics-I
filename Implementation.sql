@@ -84,14 +84,14 @@ FROM employees;
 
 # 4. Create an index and measure query speed improvement.
 -- Before running the SELECT, check speed
-EXPLAIN ANALYZE
+EXPLAIN 
 SELECT * FROM employees WHERE email = 'alice@ex.com';
 
 -- Create an index
 CREATE INDEX idx_email ON employees(email);
 
 -- After index, re-run and observe faster query
-EXPLAIN ANALYZE
+EXPLAIN 
 SELECT * FROM employees WHERE email = 'alice@ex.com';
 
 
